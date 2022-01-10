@@ -1,22 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
+
+.main{
+  //
 }
 
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-html {
-  overflow-x: hidden;
-}
-body {
-  font-size: 15px;
-  line-height: 1.2;
-  color: #666;
-  font-family: "Montserrat", sans-serif;
-  overflow-x: hidden;
-}
+
+
 
 .container {
   position: relative;
@@ -36,10 +24,35 @@ body {
   height: auto;
 }
 
-/* burgerrrrrrrrrrrrrrrrrrrrrr */
 #check-menu {
   display: none;
+
+  &:checked {
+
+    .main-menu {
+      max-height: 500px;
+      font-size: 16px;
+
+    }
+
+    .first {
+      display: none;
+    }
+
+    .second {
+      transform: rotate(-45deg);
+    }
+
+    .third {
+      transform: rotate(45deg);
+    }
+
+    .fourth {
+      display: none;
+    }
+  }
 }
+
 
 .wrapper2 {
   color: antiquewhite;
@@ -78,7 +91,10 @@ label.header-label {
   transition: 0.5s all;
 }
 
-.second,
+.second {
+  top: 24px;
+}
+
 .third {
   top: 24px;
 }
@@ -109,38 +125,15 @@ label.header-label {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   background-color: tomato;
   z-index: 5;
-}
 
-.header-a:hover {
-  background-color: red;
-  transition: 0.5s all;
-}
-
-#check-menu:checked ~ .main-menu {
-  max-height: 500px;
-  font-size: 16px;
-}
-
-#check-menu:checked ~ .first {
-  display: none;
-}
-
-#check-menu:checked ~ .second {
-  transform: rotate(-45deg);
-}
-
-#check-menu:checked ~ .third {
-  transform: rotate(45deg);
-}
-
-#check-menu:checked ~ .fourth {
-  display: none;
-}
-.mobile-burger {
-  display: none;
+  &:hover {
+    background-color: red;
+    transition: 0.5s all;
+  }
 }
 
 .mobile-burger {
+  display: none;
   background-color: rgba(70, 177, 201, 1);
   height: 50px;
   position: fixed;
@@ -152,18 +145,21 @@ label.header-label {
   display: none;
 }
 
-/* burgerrrrrrrrrrrrrrrrrrrrrr */
-button.circle span::after {
-  content: "";
-  position: absolute;
-  right: -45px;
-  width: 41px;
-  height: 5px;
-  background-image: url("../photo/arrow.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: all 0.4s ease-in-out;
+button.circle {
+  span {
+    &::after {
+      content: "";
+      position: absolute;
+      right: -45px;
+      width: 41px;
+      height: 5px;
+      background-image: url("../photo/arrow.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all 0.4s ease-in-out;
+    }
+  }
 }
 
 .two-circles {
@@ -187,28 +183,46 @@ button.circle span::after {
   cursor: pointer;
   position: relative;
   transition: all 0.4s ease-in-out;
+
+  &:hover {
+    .circle-text {
+      &::after {
+        right: -90px;
+      }
+    }
+
+    .arrow-left {
+      left: -90px;
+    }
+
+    .arrow-right {
+      right: -90px;
+    }
+  }
 }
+
 .circle-text {
   transition-duration: 0.8s;
-}
-.circle:hover .circle-text::after {
-  right: -90px;
-}
-
-.circle:hover .arrow-left {
-  left: -90px;
-}
-
-.circle:hover .arrow-right {
-  right: -90px;
+  position: absolute;
+  font-size: 24px;
+  top: 40px;
+  right: -40px;
+  display: flex;
+  align-items: center;
 }
 
 .arrow-left {
   transition-duration: 0.8s;
+  position: absolute;
+  left: -25px;
+  display: flex;
 }
 
 .arrow-right {
   transition-duration: 0.8s;
+  position: absolute;
+  right: -25px;
+  display: flex;
 }
 
 .mobile-in {
@@ -217,15 +231,6 @@ button.circle span::after {
 
 .mobile-out {
   display: block;
-}
-
-.circle-text {
-  position: absolute;
-  font-size: 24px;
-  top: 40px;
-  right: -40px;
-  display: flex;
-  align-items: center;
 }
 
 .btn-text {
@@ -257,8 +262,6 @@ button.circle span::after {
   color: #030303;
 }
 
-/* section subject-shotttttttttttttttttttttttttttttttt */
-
 .subj-shot-page {
   display: flex;
   flex-wrap: wrap;
@@ -269,6 +272,7 @@ button.circle span::after {
   max-width: 65%;
   width: 100%;
 }
+
 .text-coloum {
   width: 400px;
 }
@@ -317,7 +321,6 @@ button.circle span::after {
   margin-bottom: 50px;
 }
 
-/* we do simpl seactionnnnnnnnnnnnnnnnnnnnnnnnnnnnn */
 .we-do-simpl {
   margin-top: 70px;
 }
@@ -373,8 +376,6 @@ button.circle span::after {
   width: 100%;
 }
 
-/* we do real seactionnnnnnnnnnnnnnnnnnnnnnnnnnnn */
-
 .we-do-real {
   display: flex;
   flex-direction: column;
@@ -413,22 +414,21 @@ button.circle span::after {
   height: calc(100% / 2 - 50px);
   position: relative;
   overflow: hidden;
+
+  img {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.colom-photo img {
-  position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .colom-photo-bottom {
   max-width: 100%;
   width: 100%;
 }
-
-/* we do deteilllllllllllllllllllllllllllllllllllllllllllllllll */
 
 .we-do-deteil {
   margin-top: 100px;
@@ -453,11 +453,8 @@ button.circle span::after {
   padding-left: 100px;
 }
 
-/* success 2222222222222222222 */
-
 .add--for-cont {
   margin-top: 175px;
-  /* padding-left: 25px; */
 }
 
 .add--for-h1text {
@@ -468,27 +465,27 @@ button.circle span::after {
   position: relative;
   display: flex;
   padding-bottom: 30px;
-}
 
-.section-success::after {
-  content: "";
-  position: absolute;
-  right: -100%;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(70, 177, 201, 0.25);
-}
+  &::after {
+    content: "";
+    position: absolute;
+    right: -100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(70, 177, 201, 0.25);
+  }
 
-.section-success::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 90%;
-  background-color: rgba(70, 177, 201, 0.25);
-  z-index: -2;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 90%;
+    background-color: rgba(70, 177, 201, 0.25);
+    z-index: -2;
+  }
 }
 
 .photo-70-text {
@@ -552,8 +549,6 @@ button.circle span::after {
   left: 60px;
 }
 
-/* seaction-geleryyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy */
-
 .seaction-gelery {
   margin-top: 100px;
   display: flex;
@@ -569,26 +564,11 @@ button.circle span::after {
   max-width: 45%;
 }
 
-/* seactions-2btnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn */
 .seactions-2btn {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
 }
-
-.arrow-left {
-  position: absolute;
-  left: -25px;
-  display: flex;
-}
-
-.arrow-right {
-  position: absolute;
-  right: -25px;
-  display: flex;
-}
-
-/* seaction-contacttttttttttttttttttttttttttttttttttt */
 
 .seaction-contact {
   margin-top: 100px;
@@ -607,32 +587,42 @@ button.circle span::after {
 
 #form {
   padding: 40px;
-}
 
-#form .form-group {
-  margin: 10px 0 30px;
+  .form-group {
+    margin: 10px 0 30px;
+  }
+
+  input {
+    width: 100%;
+    color: black;
+    min-height: 40px;
+    background: transparent;
+    border: none;
+    appearance: none;
+    border-bottom: 1px solid gray;
+    resize: none;
+    margin-top: 20px;
+    outline: none;
+  }
+
+  textarea {
+    width: 100%;
+    color: black;
+    min-height: 40px;
+    background: transparent;
+    border: none;
+    appearance: none;
+    border-bottom: 1px solid gray;
+    resize: none;
+    margin-top: 20px;
+    outline: none;
+    min-height: 150px;
+  }
 }
 
 .big-message {
   min-height: 150px;
   outline: none;
-}
-
-#form input,
-#form textarea {
-  width: 100%;
-  color: black;
-  min-height: 40px;
-  background: transparent;
-  border: none;
-  appearance: none;
-  border-bottom: 1px solid gray;
-  resize: none;
-  margin-top: 20px;
-  outline: none;
-}
-#form textarea {
-  min-height: 150px;
 }
 
 .finish-btn-mrg {
@@ -686,7 +676,10 @@ button.circle span::after {
   width: 400px;
 }
 
-#burger,
+#burger {
+  display: none;
+}
+
 [for="burger"] {
   display: none;
 }
@@ -695,8 +688,6 @@ button.circle span::after {
   display: flex;
   list-style: none;
 }
-
-/* adaptaciaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
 
 @media all and (max-width: 1199px) {
   .container {
@@ -808,17 +799,22 @@ button.circle span::after {
     width: 95%;
     left: 20%;
   }
+
   .photoparat-grey {
     bottom: -30%;
     left: 15%;
   }
 
-  .circle:hover .arrow-left {
-    left: -90px;
-  }
+  .circle {
+    &:hover {
+      .arrow-left {
+        left: -90px;
+      }
 
-  .circle:hover .arrow-right {
-    right: -90px;
+      .arrow-right {
+        right: -90px;
+      }
+    }
   }
 
   .header-ul {
@@ -883,9 +879,11 @@ button.circle span::after {
   .container {
     max-width: 960px;
   }
+
   .we-do-left-part {
     max-width: 60%;
     padding-right: 20px;
+    max-width: 100%;
   }
 
   .head-li {
@@ -926,10 +924,6 @@ button.circle span::after {
     top: 0px;
     display: flex;
     align-items: center;
-  }
-
-  .we-do-left-part {
-    max-width: 100%;
   }
 
   .page-one-photo1 {
@@ -1010,6 +1004,7 @@ button.circle span::after {
   .subject-shot-descr {
     margin-top: 12px;
   }
+
   .main-text {
     font-weight: 400;
     font-size: 31px;
@@ -1031,6 +1026,7 @@ button.circle span::after {
   .footer-ul {
     margin-top: 70px;
   }
+
   .footer-img {
     margin-top: 65px;
     display: flex;
@@ -1046,9 +1042,16 @@ button.circle span::after {
     margin-top: -120px;
   }
 
-  .section-success::before {
-    top: -80px;
-    height: 130%;
+  .section-success {
+    &::before {
+      top: -80px;
+      height: 130%;
+    }
+
+    &::after {
+      height: 130%;
+      top: -80px;
+    }
   }
 
   .margintp70 {
@@ -1059,38 +1062,33 @@ button.circle span::after {
     margin-top: 25px;
     width: 100px;
     height: 100px;
+
+    &:hover {
+      .arrow-left {
+        left: -90px;
+      }
+
+      .arrow-right {
+        right: -90px;
+      }
+    }
   }
 
   .circle-text {
     top: 35px;
-  }
-
-  .circle-text {
     font-size: 20px;
     top: 40px;
   }
 
-  .circle:hover .arrow-left {
-    left: -90px;
-  }
-
-  .circle:hover .arrow-right {
-    right: -90px;
-  }
   .margin-mobile {
     margin-top: -25px;
   }
 
-  .section-success::after {
-    height: 130%;
-    top: -80px;
-  }
-
-  #form .form-group {
-    padding: 25px;
-  }
-
   #form {
+    .form-group {
+      padding: 25px;
+    }
+
     padding: 0px;
   }
 }
@@ -1122,6 +1120,7 @@ button.circle span::after {
 
   .subject-shot-text {
     margin-top: 70px;
+    margin-top: 50px;
   }
 
   .margintp70 {
@@ -1133,6 +1132,7 @@ button.circle span::after {
     top: 28px;
     right: -30px;
   }
+
   .cup-spoon-photo {
     left: -30%;
     width: 235px;
@@ -1140,19 +1140,20 @@ button.circle span::after {
 
   .we-do-left-part {
     max-width: 100%;
+    padding-right: 0px;
   }
 
   .number-text {
     margin-right: 35px;
-  }
-
-  .number-text {
     font-size: 110px;
+    font-size: 90px;
+    margin-right: 0px;
   }
 
   .subject-shot-descr {
     margin-top: 0px;
   }
+
   .main-text {
     font-size: 25px;
     margin-top: 0px;
@@ -1208,6 +1209,9 @@ button.circle span::after {
     width: 145px;
     top: -80px;
     right: -70px;
+    width: 145px;
+    top: -140px;
+    left: -75px;
   }
 
   .photoparat-grey {
@@ -1256,13 +1260,17 @@ button.circle span::after {
     margin-top: 70px;
     margin-bottom: 50px;
   }
+
   .link-footer {
     margin-right: 60px;
+    margin: 0px 25px;
   }
 
   .display {
     flex-direction: column;
+    margin-left: 0px;
   }
+
   .footer-meny {
     max-width: 100%;
     width: 100%;
@@ -1296,15 +1304,20 @@ button.circle span::after {
     text-align: center;
   }
 
-  .number-text {
-    font-size: 90px;
-    margin-right: 0px;
-  }
-
   .circle {
     margin-top: 0px;
     width: 70px;
     height: 70px;
+
+    &:hover {
+      .arrow-left {
+        left: -65px;
+      }
+
+      .arrow-right {
+        right: -65px;
+      }
+    }
   }
 
   .we-real-coloum-photos {
@@ -1325,18 +1338,8 @@ button.circle span::after {
 
   .detail-photo-right {
     padding-left: 35px;
-  }
-
-  .link-footer {
-    margin: 0px 25px;
-  }
-
-  .display {
-    margin-left: 0px;
-  }
-
-  .subject-shot-text {
-    margin-top: 50px;
+    max-width: 100%;
+    padding-left: 0px;
   }
 
   .photoparat-blue {
@@ -1344,14 +1347,16 @@ button.circle span::after {
     left: 0px;
   }
 
-  .photoparat-pink {
-    width: 145px;
-    top: -140px;
-    left: -75px;
-  }
+  .section-success {
+    &::before {
+      display: none;
+    }
 
-  .section-success::before {
-    display: none;
+    &::after {
+      display: none;
+    }
+
+    padding-bottom: 50px;
   }
 
   .seaction-gelery {
@@ -1401,6 +1406,7 @@ button.circle span::after {
   .mobile-out {
     display: none;
   }
+
   .mobile-in {
     display: flex;
     margin-top: 0px;
@@ -1410,33 +1416,19 @@ button.circle span::after {
     max-width: 100%;
   }
 
-  .detail-photo-right {
-    max-width: 100%;
-    padding-left: 0px;
-  }
-
   .photo-70-photos {
     max-width: 0%;
   }
 
-  .we-do-left-part {
-    padding-right: 0px;
-  }
-  #form .form-group {
-    padding-left: 30px;
-    margin-top: 30px;
+  #form {
+    .form-group {
+      padding-left: 30px;
+      margin-top: 30px;
+    }
   }
 
   .add--for-cont {
     margin-top: 130px;
-  }
-
-  .section-success::after {
-    display: none;
-  }
-
-  .section-success {
-    padding-bottom: 50px;
   }
 
   .we-do--desc2 {
@@ -1446,14 +1438,6 @@ button.circle span::after {
 
   .we-do--desc3 {
     max-width: 100%;
-  }
-
-  .circle:hover .arrow-left {
-    left: -65px;
-  }
-
-  .circle:hover .arrow-right {
-    right: -65px;
   }
 
   .main {
@@ -1480,6 +1464,7 @@ button.circle span::after {
 
   .subj-shot-page {
     padding-top: 0px;
+    flex-direction: column;
   }
 
   .wrapper-mobile-in {
@@ -1538,9 +1523,19 @@ button.circle span::after {
     margin-top: 0px;
   }
 
-  .section-success::after {
-    height: 101%;
-    top: 0px;
+  .section-success {
+    &::after {
+      height: 101%;
+      top: 0px;
+    }
+
+    padding-bottom: 0px;
+
+    &::before {
+      top: 0px;
+      height: 100%;
+      margin-top: 40px;
+    }
   }
 
   .we-do-real-photos {
@@ -1553,10 +1548,25 @@ button.circle span::after {
 
   .we-real-coloum-photos {
     padding-left: 20px;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+    justify-content: unset;
+    margin-top: 5px;
   }
 
   .colom-photo {
     height: calc(100% / 2 - 10px);
+
+    img {
+      position: relative;
+      min-width: 100%;
+      width: 100%;
+      min-height: 100%;
+      top: unset;
+      left: unset;
+      transform: none;
+    }
   }
 
   .circle-text {
@@ -1566,10 +1576,6 @@ button.circle span::after {
 
   .link-footer {
     font-size: 14px;
-  }
-
-  .subj-shot-page {
-    flex-direction: column;
   }
 
   .subject-shot-alltext {
@@ -1594,6 +1600,7 @@ button.circle span::after {
     max-width: 100%;
     margin-top: 20px;
   }
+
   .cup-spoon-photo {
     position: static;
     max-width: 100%;
@@ -1605,16 +1612,6 @@ button.circle span::after {
   .photo-70-text {
     max-width: 100%;
     margin-top: 30px;
-  }
-
-  .section-success {
-    padding-bottom: 0px;
-  }
-
-  .section-success::before {
-    top: 0px;
-    height: 100%;
-    margin-top: 40px;
   }
 
   .footer-img-size {
@@ -1650,24 +1647,6 @@ button.circle span::after {
 
   .seaction-contact {
     margin-top: 40px;
-  }
-
-  .we-real-coloum-photos {
-    padding: 0;
-    max-width: 100%;
-    width: 100%;
-    justify-content: unset;
-    margin-top: 5px;
-  }
-
-  .colom-photo img {
-    position: relative;
-    min-width: 100%;
-    width: 100%;
-    min-height: 100%;
-    top: unset;
-    left: unset;
-    transform: none;
   }
 
   .colom-photo-top {
@@ -1786,6 +1765,7 @@ button.circle span::after {
 
   .rectangle {
     top: 155px;
+    height: 360px;
   }
 
   .we-real-left-part {
@@ -1796,14 +1776,16 @@ button.circle span::after {
     margin-top: 10px;
   }
 
-  .colom-photo img {
-    position: relative;
-    min-width: 100%;
-    width: 100%;
-    min-height: 100%;
-    top: unset;
-    left: unset;
-    transform: none;
+  .colom-photo {
+    img {
+      position: relative;
+      min-width: 100%;
+      width: 100%;
+      min-height: 100%;
+      top: unset;
+      left: unset;
+      transform: none;
+    }
   }
 
   .we-real-coloum-photos {
@@ -1826,6 +1808,7 @@ button.circle span::after {
   .h1-text {
     text-align: center;
   }
+
   .subject-shot-text {
     width: 100%;
     margin-top: 30px;
@@ -1846,10 +1829,6 @@ button.circle span::after {
 
   .shot-success-text {
     max-width: 100%;
-  }
-
-  .rectangle {
-    height: 360px;
   }
 
   .gelery-text-cont {
@@ -1902,6 +1881,7 @@ button.circle span::after {
 
   .form-container {
     width: 100%;
+    margin-top: 15px;
   }
 
   .footer-img {
@@ -1914,22 +1894,33 @@ button.circle span::after {
     width: 100%;
   }
 
-  #form .form-group {
-    padding-left: 15px;
-  }
+  #form {
+    .form-group {
+      padding-left: 15px;
+      padding-left: 15px;
+      padding: 15px;
+      margin: 0px;
+    }
 
-  #form .form-group {
-    padding-left: 15px;
+    padding-top: 0px;
   }
 
   .footer-meny {
     display: block;
   }
 
-  .section-success::before {
-    background-color: transparent;
-    z-index: -1;
-    width: 100%;
+  .section-success {
+    &::before {
+      background-color: transparent;
+      z-index: -1;
+      width: 100%;
+    }
+
+    padding-bottom: 0px;
+
+    &::after {
+      background-color: transparent;
+    }
   }
 
   .add--for-cont {
@@ -1949,6 +1940,14 @@ button.circle span::after {
 
   .circle {
     margin-top: 20px;
+
+    &:hover {
+      .circle-text {
+        &::after {
+          right: -70px;
+        }
+      }
+    }
   }
 
   .we-do-deteil {
@@ -1963,34 +1962,7 @@ button.circle span::after {
     margin-top: 15px;
   }
 
-  .section-success {
-    padding-bottom: 0px;
-  }
-
   .seaction-contact {
     margin-top: 30px;
-  }
-
-  .form-container {
-    margin-top: 15px;
-  }
-
-  #form {
-    padding-top: 0px;
-  }
-
-  .section-success::after {
-    background-color: transparent;
-  }
-
-  .circle:hover .circle-text::after {
-    right: -70px;
-  }
-
-  #form .form-group {
-    padding: 15px;
-  }
-  #form .form-group {
-    margin: 0px;
   }
 }
