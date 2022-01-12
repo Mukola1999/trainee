@@ -1,15 +1,10 @@
-@media all and (max-width: 575px) {
+ @media all and (max-width: 575px) {
   .container {
     max-width: 540px;
   }
 
   .subj-shot-page {
     padding-top: 0px;
-    flex-direction: column;
-  }
-
-  .wrapper-mobile-in {
-    padding: 0 20px;
   }
 
   .mobile-out-767 {
@@ -64,19 +59,9 @@
     margin-top: 0px;
   }
 
-  .section-success {
-    &::after {
-      height: 101%;
-      top: 0px;
-    }
-
-    padding-bottom: 0px;
-
-    &::before {
-      top: 0px;
-      height: 100%;
-      margin-top: 40px;
-    }
+  .section-success::after {
+    height: 101%;
+    top: 0px;
   }
 
   .we-do-real-photos {
@@ -89,25 +74,10 @@
 
   .we-real-coloum-photos {
     padding-left: 20px;
-    padding: 0;
-    max-width: 100%;
-    width: 100%;
-    justify-content: unset;
-    margin-top: 5px;
   }
 
   .colom-photo {
     height: calc(100% / 2 - 10px);
-
-    img {
-      position: relative;
-      min-width: 100%;
-      width: 100%;
-      min-height: 100%;
-      top: unset;
-      left: unset;
-      transform: none;
-    }
   }
 
   .circle-text {
@@ -117,6 +87,10 @@
 
   .link-footer {
     font-size: 14px;
+  }
+
+  .subj-shot-page {
+    flex-direction: column;
   }
 
   .subject-shot-alltext {
@@ -141,7 +115,6 @@
     max-width: 100%;
     margin-top: 20px;
   }
-
   .cup-spoon-photo {
     position: static;
     max-width: 100%;
@@ -155,6 +128,16 @@
     margin-top: 30px;
   }
 
+  .section-success {
+    padding-bottom: 0px;
+  }
+
+  .section-success::before {
+    top: 0px;
+    height: 100%;
+    margin-top: 40px;
+  }
+
   .footer-img-size {
     height: auto;
     max-width: 24px;
@@ -163,8 +146,6 @@
 
   .page-one-photo1 {
     margin-top: 15px;
-    max-width: 100%;
-    padding: 0px;
   }
 
   .descr-text {
@@ -190,13 +171,5 @@
 
   .seaction-contact {
     margin-top: 40px;
-  }
-
-  .colom-photo-top {
-    margin-bottom: 15px;
-  }
-
-  .we-real-left-part {
-    display: none;
   }
 }

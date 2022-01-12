@@ -7,6 +7,10 @@
     display: none;
   }
 
+  .container {
+    max-width: 395px;
+  }
+
   .mobile-out {
     display: none;
   }
@@ -105,7 +109,6 @@
 
   .rectangle {
     top: 155px;
-    height: 360px;
   }
 
   .we-real-left-part {
@@ -116,16 +119,14 @@
     margin-top: 10px;
   }
 
-  .colom-photo {
-    img {
-      position: relative;
-      min-width: 100%;
-      width: 100%;
-      min-height: 100%;
-      top: unset;
-      left: unset;
-      transform: none;
-    }
+  .colom-photo img {
+    position: relative;
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    top: unset;
+    left: unset;
+    transform: none;
   }
 
   .we-real-coloum-photos {
@@ -148,7 +149,6 @@
   .h1-text {
     text-align: center;
   }
-
   .subject-shot-text {
     width: 100%;
     margin-top: 30px;
@@ -169,6 +169,10 @@
 
   .shot-success-text {
     max-width: 100%;
+  }
+
+  .rectangle {
+    height: 360px;
   }
 
   .gelery-text-cont {
@@ -204,7 +208,11 @@
   .circle-mobile {
     margin-top: -35px;
   }
-  
+
+  .link-footer {
+    margin: 0px;
+  }
+
   .footer-ul {
     justify-content: space-around;
     margin-top: 40px;
@@ -217,7 +225,6 @@
 
   .form-container {
     width: 100%;
-    margin-top: 15px;
   }
 
   .footer-img {
@@ -230,33 +237,22 @@
     width: 100%;
   }
 
-  #form {
-    .form-group {
-      padding-left: 15px;
-      padding-left: 15px;
-      padding: 15px;
-      margin: 0px;
-    }
+  #form .form-group {
+    padding-left: 15px;
+  }
 
-    padding-top: 0px;
+  #form .form-group {
+    padding-left: 15px;
   }
 
   .footer-meny {
     display: block;
   }
 
-  .section-success {
-    &::before {
-      background-color: transparent;
-      z-index: -1;
-      width: 100%;
-    }
-
-    padding-bottom: 0px;
-
-    &::after {
-      background-color: transparent;
-    }
+  .section-success::before {
+    background-color: transparent;
+    z-index: -1;
+    width: 100%;
   }
 
   .add--for-cont {
@@ -276,14 +272,6 @@
 
   .circle {
     margin-top: 20px;
-
-    &:hover {
-      .circle-text {
-        &::after {
-          right: -70px;
-        }
-      }
-    }
   }
 
   .we-do-deteil {
@@ -298,7 +286,34 @@
     margin-top: 15px;
   }
 
+  .section-success {
+    padding-bottom: 0px;
+  }
+
   .seaction-contact {
     margin-top: 30px;
+  }
+
+  .form-container {
+    margin-top: 15px;
+  }
+
+  #form {
+    padding-top: 0px;
+  }
+
+  .section-success::after {
+    background-color: transparent;
+  }
+
+  .circle:hover .circle-text::after {
+    right: -70px;
+  }
+
+  #form .form-group {
+    padding: 15px;
+  }
+  #form .form-group {
+    margin: 0px;
   }
 }

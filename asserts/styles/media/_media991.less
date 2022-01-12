@@ -2,11 +2,9 @@
   .container {
     max-width: 960px;
   }
-
   .we-do-left-part {
     max-width: 60%;
     padding-right: 20px;
-    max-width: 100%;
   }
 
   .head-li {
@@ -47,6 +45,10 @@
     top: 0px;
     display: flex;
     align-items: center;
+  }
+
+  .we-do-left-part {
+    max-width: 100%;
   }
 
   .page-one-photo1 {
@@ -127,7 +129,6 @@
   .subject-shot-descr {
     margin-top: 12px;
   }
-
   .main-text {
     font-weight: 400;
     font-size: 31px;
@@ -149,7 +150,6 @@
   .footer-ul {
     margin-top: 70px;
   }
-
   .footer-img {
     margin-top: 65px;
     display: flex;
@@ -165,16 +165,9 @@
     margin-top: -120px;
   }
 
-  .section-success {
-    &::before {
-      top: -80px;
-      height: 130%;
-    }
-
-    &::after {
-      height: 130%;
-      top: -80px;
-    }
+  .section-success::before {
+    top: -80px;
+    height: 130%;
   }
 
   .margintp70 {
@@ -185,33 +178,38 @@
     margin-top: 25px;
     width: 100px;
     height: 100px;
-
-    &:hover {
-      .arrow-left {
-        left: -90px;
-      }
-
-      .arrow-right {
-        right: -90px;
-      }
-    }
   }
 
   .circle-text {
     top: 35px;
+  }
+
+  .circle-text {
     font-size: 20px;
     top: 40px;
   }
 
+  .circle:hover .arrow-left {
+    left: -90px;
+  }
+
+  .circle:hover .arrow-right {
+    right: -90px;
+  }
   .margin-mobile {
     margin-top: -25px;
   }
 
-  #form {
-    .form-group {
-      padding: 25px;
-    }
+  .section-success::after {
+    height: 130%;
+    top: -80px;
+  }
 
+  #form .form-group {
+    padding: 25px;
+  }
+
+  #form {
     padding: 0px;
   }
 }

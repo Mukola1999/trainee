@@ -108,22 +108,17 @@
     width: 95%;
     left: 20%;
   }
-
   .photoparat-grey {
     bottom: -30%;
     left: 15%;
   }
 
-  .circle {
-    &:hover {
-      .arrow-left {
-        left: -90px;
-      }
+  .circle:hover .arrow-left {
+    left: -90px;
+  }
 
-      .arrow-right {
-        right: -90px;
-      }
-    }
+  .circle:hover .arrow-right {
+    right: -90px;
   }
 
   .header-ul {
@@ -161,6 +156,10 @@
 
   .add--for-cont {
     margin-top: 160px;
+  }
+
+  .section-success::before {
+    top: -5px;
   }
 
   .seaction-gelery {

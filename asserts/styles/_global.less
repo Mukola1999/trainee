@@ -1,16 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-
-  &:before {
-    box-sizing: border-box;
-  }
-
-  &:after {
-    box-sizing: border-box;
-  }
 }
 
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 html {
   overflow-x: hidden;
 }
@@ -18,11 +14,10 @@ html {
 body {
   font-size: 15px;
   line-height: 1.2;
-  color: @grey;
+  color: #666;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 }
-
 .container {
   position: relative;
   max-width: 1180px;
@@ -40,47 +35,42 @@ body {
   width: 100%;
   height: auto;
 }
-
-
-.h1-text {
-  font-weight: 400;
-  font-size: 70px;
-  color: @black;
+button.circle span::after {
+  content: "";
+  position: absolute;
+  right: -45px;
+  width: 41px;
+  height: 5px;
+  background-image: url("photo/arrow.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.4s ease-in-out;
 }
-
-
-
-.h3-text {
-  font-size: 24px;
-  color: @black;
-  margin-top: 20px;
-  font-weight: 400;
+.two-circles {
+  position: relative;
+  margin: auto;
+  display: flex;
+  padding: 0 10px;
 }
-
 .margintp70 {
   margin-top: 30px;
 }
 
-.circle-button {
+.circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: #000000;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease-in-out;
 }
-
-button.circle {
-  span {
-    &::after {
-      content: "";
-      position: absolute;
-      right: -45px;
-      width: 41px;
-      height: 5px;
-      background-image: url("../../photo/arrow.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: all 0.4s ease-in-out;
-    }
-  }
+.circle-text {
+  transition-duration: 0.8s;
 }
-
 
 .mobile-in {
   display: none;
@@ -89,50 +79,74 @@ button.circle {
 .mobile-out {
   display: block;
 }
-
-.circle {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 1px solid;
-  border-color: @black;
-  background-color: transparent;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.4s ease-in-out;
+.circle-text {
+  position: absolute;
+  font-size: 24px;
+  top: 40px;
+  right: -40px;
+  display: flex;
+  align-items: center;
 }
 
-  .circle-text {
-    &::after {
-      right: -90px;
-    }
-  }
+.btn-text {
+  right: -50px;
+}
 
-  .arrow-left {
-    left: -90px;
-  }
+.arow {
+  position: absolute;
+  right: 0;
+  top: 58px;
+}
+.h1-text {
+  font-weight: 400;
+  font-size: 70px;
+  color: #030303;
+}
+.h3-text {
+  font-size: 24px;
+  color: #030303;
+  margin-top: 20px;
+  font-weight: 400;
+}
 
-  .arrow-right {
-    right: -90px;
-  }
+.number-text {
+  font-size: 144px;
+  font-weight: normal;
+  color: rgba(70, 177, 201, 1);
+  margin-right: 70px;
+}
 
+.we-do-descr {
+  display: flex;
+  flex-direction: column;
+}
+#form {
+  padding: 40px;
+}
 
-  .circle-text {
-    transition-duration: 0.8s;
-    position: absolute;
-    font-size: 24px;
-    top: 40px;
-    right: -40px;
-    display: flex;
-    align-items: center;
-  }
+#form .form-group {
+  margin: 10px 0 30px;
+}
 
-  .link {
-    text-decoration: none;
-    font-size: 18px;
-    color: @black;
-  }
+.big-message {
+  min-height: 150px;
+  outline: none;
+}
 
-
-
+#form input,
+#form textarea {
+  width: 100%;
+  color: black;
+  min-height: 40px;
+  background: transparent;
+  border: none;
+  appearance: none;
+  border-bottom: 1px solid gray;
+  resize: none;
+  margin-top: 20px;
+  outline: none;
+}
+#form textarea {
+  min-height: 150px;
+}
 
