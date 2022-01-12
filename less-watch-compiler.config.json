@@ -1,0 +1,6 @@
+{
+  "watchFolder": "asserts/styles",
+  "outputFolder": "dist/css",
+  "mainFile": "main.less",
+  "includeHidden": true
+}

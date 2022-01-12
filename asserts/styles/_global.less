@@ -18,7 +18,7 @@ html {
 body {
   font-size: 15px;
   line-height: 1.2;
-  color: #666;
+  color: @grey;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 }
@@ -33,3 +33,106 @@ body {
 .wrapper {
   padding: 0 25px;
 }
+
+.only-img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+
+.h1-text {
+  font-weight: 400;
+  font-size: 70px;
+  color: @black;
+}
+
+
+
+.h3-text {
+  font-size: 24px;
+  color: @black;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.margintp70 {
+  margin-top: 30px;
+}
+
+.circle-button {
+}
+
+button.circle {
+  span {
+    &::after {
+      content: "";
+      position: absolute;
+      right: -45px;
+      width: 41px;
+      height: 5px;
+      background-image: url("../../photo/arrow.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+}
+
+
+.mobile-in {
+  display: none;
+}
+
+.mobile-out {
+  display: block;
+}
+
+.circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: @black;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+
+  .circle-text {
+    &::after {
+      right: -90px;
+    }
+  }
+
+  .arrow-left {
+    left: -90px;
+  }
+
+  .arrow-right {
+    right: -90px;
+  }
+
+
+  .circle-text {
+    transition-duration: 0.8s;
+    position: absolute;
+    font-size: 24px;
+    top: 40px;
+    right: -40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .link {
+    text-decoration: none;
+    font-size: 18px;
+    color: @black;
+  }
+
+
+
+
