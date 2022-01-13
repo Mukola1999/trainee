@@ -7,17 +7,20 @@
 *:after {
   box-sizing: border-box;
 }
+
 html {
   overflow-x: hidden;
 }
 
 body {
+  background-color: yellow;
   font-size: 15px;
   line-height: 1.2;
-  color: #666;
+  color: @grey;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 }
+
 .container {
   position: relative;
   max-width: 1180px;
@@ -35,26 +38,33 @@ body {
   width: 100%;
   height: auto;
 }
+
 button.circle span::after {
   content: "";
   position: absolute;
   right: -45px;
   width: 41px;
   height: 5px;
-  background-image: url("photo/arrow.png");
+  background-image: url("../../photo/arrow.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transition: all 0.4s ease-in-out;
 }
+
 .two-circles {
   position: relative;
   margin: auto;
-  display: flex;
+  .dsp-flx;
   padding: 0 10px;
 }
-.margintp70 {
+
+.margintp30 {
   margin-top: 30px;
+}
+
+.display-flex {
+  display: flex;
 }
 
 .circle {
@@ -62,15 +72,21 @@ button.circle span::after {
   height: 110px;
   border-radius: 50%;
   border: 1px solid;
-  border-color: #000000;
-  background-color: transparent;
+  border-color: @black;
+  background-color: @transparent;
   cursor: pointer;
   position: relative;
   transition: all 0.4s ease-in-out;
-}
-.circle-text {
-  transition-duration: 0.8s;
-}
+    &:hover .circle-text::after {
+      right: -90px;
+    }
+    &:hover .arrow-left {
+      left: -90px;
+    }
+    &:hover .arrow-right {
+      right: -90px;
+    }
+    }
 
 .mobile-in {
   display: none;
@@ -79,6 +95,7 @@ button.circle span::after {
 .mobile-out {
   display: block;
 }
+
 .circle-text {
   position: absolute;
   font-size: 24px;
@@ -86,25 +103,28 @@ button.circle span::after {
   right: -40px;
   display: flex;
   align-items: center;
+  transition-duration: 0.8s;
 }
 
 .btn-text {
   right: -50px;
 }
 
-.arow {
+.arrow {
   position: absolute;
   right: 0;
   top: 58px;
 }
+
 .h1-text {
   font-weight: 400;
   font-size: 70px;
-  color: #030303;
+  color: @black;
 }
+
 .h3-text {
   font-size: 24px;
-  color: #030303;
+  color: @black;
   margin-top: 20px;
   font-weight: 400;
 }
@@ -112,7 +132,7 @@ button.circle span::after {
 .number-text {
   font-size: 144px;
   font-weight: normal;
-  color: rgba(70, 177, 201, 1);
+  color: @blue;
   margin-right: 70px;
 }
 
@@ -120,11 +140,28 @@ button.circle span::after {
   display: flex;
   flex-direction: column;
 }
+
+
 #form {
   padding: 40px;
+  input, textarea {
+    width: 100%;
+    color: @black;
+    min-height: 40px;
+    background: @transparent;
+    border: none;
+    appearance: none;
+    border-bottom: 1px solid gray;
+    resize: none;
+    margin-top: 20px;
+    outline: none;
+  }
+  textarea {
+    min-height: 150px;
+  }
 }
 
-#form .form-group {
+.form-group {
   margin: 10px 0 30px;
 }
 
@@ -132,21 +169,3 @@ button.circle span::after {
   min-height: 150px;
   outline: none;
 }
-
-#form input,
-#form textarea {
-  width: 100%;
-  color: black;
-  min-height: 40px;
-  background: transparent;
-  border: none;
-  appearance: none;
-  border-bottom: 1px solid gray;
-  resize: none;
-  margin-top: 20px;
-  outline: none;
-}
-#form textarea {
-  min-height: 150px;
-}
-
